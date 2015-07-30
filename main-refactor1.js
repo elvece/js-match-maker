@@ -38,6 +38,20 @@ function addMorePeople(typeStr){
   }
 }
 
+//function that iterates through the array and displays the mentors of the entered city
+//question: since personArry is all students and mentors, how do we find just the mentors with listed city?
+//answer? split personArry into serperate student and mentor arrays, but then how do we rework outputInfo function...
+function findMentor(city){
+  var mentorCityArray = [];
+  for (var i = 0; i < personArray.length; i++) {
+    var getCity = personArray[i][0].City;
+    if (getCity == city){
+      mentorCityArray.push(personArray[i].Name);
+    }
+  }
+  console.log((mentorCityArray));
+}
+
 //calling functions
 alert("Enter student information.");
 outputInfo();
@@ -47,5 +61,7 @@ alert("Enter mentor information.");
 outputInfo();
 addMorePeople("mentor");
 
+prompt("Enter a city to find a mentor.");
+findMentor();
 
-console.log(personArray);
+// console.log(personArray);
