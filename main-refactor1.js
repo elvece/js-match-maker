@@ -3,7 +3,7 @@ var personArray = [];
 
 //all functions
 
-//For each person, asks the user for their name, phone number, and city. Creates an object for each person. Adds each object to an array.
+//function that asks the user for their name, phone number, and city, then creates an object for each person and adds each object to an array.
 function getInfo(){
   var initialInfoArray = [];
   var name = prompt("What is your full name?");
@@ -25,31 +25,27 @@ function outputInfo (){
   personArray.push(outputInfoArray);
 }
 
-//calling functions
-alert("Enter student information.");
-outputInfo();
-//while the prompt is true, prompts if wants to add more students then runs outoutInfo() if user enters yes, otherwise, ends the entering info phase through break
-while(true){
-var addStudents = prompt("Would you like to add more students? Please answer yes or no.");
-  if (addStudents === "yes"){
-    outputInfo();
-  }
-  else {
-    break;
+//modular function that indiciates while the prompt is true, prompts if wants to add more mentors then runs outoutInfo() if user enters yes, otherwise, ends the entering info phase through break
+function addMorePeople(typeStr){
+  while(true){
+    var addPerson = prompt("Would you like to add another " + typeStr + "? Please answer yes or no.");
+    if (addPerson === "yes"){
+      outputInfo();
+    }
+    else {
+      break;
+    }
   }
 }
 
+//calling functions
+alert("Enter student information.");
+outputInfo();
+addMorePeople("student");
+
 alert("Enter mentor information.");
 outputInfo();
-//while the prompt is true, prompts if wants to add more mentors then runs outoutInfo() if user enters yes, otherwise, ends the entering info phase through break
-while(true){
-  var addMentor = prompt("Would you like to add another Mentor? Please answer yes or no.");
-  if (addMentor === "yes"){
-    outputInfo();
-  }
-  else {
-    break;
-  }
-}
+addMorePeople("mentor");
+
 
 console.log(personArray);
