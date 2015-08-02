@@ -44,12 +44,13 @@ function addMorePeople(typeStr){
 function findMentor(city){
   var mentorCityArray = [];
   for (var i = 0; i < personArray.length; i++) {
-    var getCity = personArray[i][0].City;
+    var getCity = personArray[1][i].City;
+    debugger;
     if (getCity == city){
       mentorCityArray.push(personArray[i].Name);
     }
   }
-  console.log((mentorCityArray));
+  console.log(mentorCityArray);
 }
 
 //calling functions
