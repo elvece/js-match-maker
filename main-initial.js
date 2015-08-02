@@ -1,3 +1,5 @@
+//second attempt, works with alerts
+
 //global variables
 var personArray = [];
 

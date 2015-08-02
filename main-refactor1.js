@@ -1,3 +1,5 @@
+//refactoring attempt, trying to display all mentors with specific city
+
 //global variables
 var personArray = [];
 
@@ -66,3 +68,6 @@ prompt("Enter a city to find a mentor.");
 findMentor();
 
 // console.log(personArray);
+
+
+
